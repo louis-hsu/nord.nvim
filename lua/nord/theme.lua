@@ -60,7 +60,9 @@ theme.loadSyntax = function()
 		markdownH2 = { fg = nord.nord11_gui, style = bold },
 		markdownH3 = { fg = nord.nord14_gui, style = bold },
 		Error = { fg = nord.nord11_gui, bg = nord.none, style = bold_underline }, -- any erroneous construct with bold
-		Comment = { fg = nord.nord3_gui_bright, style = italic }, -- italic comments
+		-- Comment = { fg = nord.nord3_gui_bright, style = italic }, -- italic comments
+    -- Update comment color -- Louis 2023-05-15 17:18
+		Comment = { fg = nord.nord_gui_comment, style = italic }, -- italic comments
 		Conditional = { fg = nord.nord9_gui, style = italic }, -- italic if, then, else, endif, switch, etc.
 		Function = { fg = nord.nord8_gui, style = italic }, -- italic funtion names
 		Identifier = { fg = nord.nord9_gui, style = italic }, -- any variable name
@@ -87,7 +89,9 @@ theme.loadEditor = function()
 		FoldColumn = { fg = nord.nord7_gui },
 		IncSearch = { fg = nord.nord6_gui, bg = nord.nord10_gui },
 		LineNr = { fg = nord.nord3_gui_bright },
-		CursorLineNr = { fg = nord.nord4_gui },
+		-- CursorLineNr = { fg = nord.nord4_gui },
+    -- Change to be more obvious color -- Louis 2023-05-15 17:22
+		CursorLineNr = { fg = nord.nord13_gui, style = bold },
 		MatchParen = { fg = nord.nord15_gui, bg = nord.none, style = bold },
 		ModeMsg = { fg = nord.nord4_gui },
 		MoreMsg = { fg = nord.nord4_gui },
@@ -327,7 +331,9 @@ theme.loadTreeSitter = function()
 	treesitter["@text.title"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
 	treesitter["@text.strong"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
 	-- Comments
-	treesitter.TSComment = { fg = nord.nord3_gui_bright, style = italic }
+	-- treesitter.TSComment = { fg = nord.nord3_gui_bright, style = italic }
+  -- Update comment color -- Louis 2023-05-15 17:27
+	treesitter.TSComment = { fg = nord.nord_gui_comment, style = italic }
 	-- Conditionals
 	treesitter.TSConditional = { fg = nord.nord9_gui, style = italic } -- For keywords related to conditionnals.
 	-- Function names
@@ -350,7 +356,9 @@ theme.loadTreeSitter = function()
 	treesitter.TSStringEscape = { fg = nord.nord15_gui, style = italic } -- For escape characters within a string.
 	treesitter.TSCharacter = { fg = nord.nord14_gui, style = italic } -- For characters.
 
-	treesitter["@comment"] = { fg = nord.nord3_gui_bright, style = italic }
+	-- treesitter["@comment"] = { fg = nord.nord3_gui_bright, style = italic }
+  -- Update comment color -- Louis 2023-05-15 17:29
+	treesitter["@comment"] = { fg = nord.nord_gui_comment, style = italic }
 	treesitter["@conditional"] = { fg = nord.nord9_gui, style = italic }
 	treesitter["@function"] = { fg = nord.nord8_gui, style = italic }
 	treesitter["@method"] = { fg = nord.nord8_gui, style = italic }
@@ -617,7 +625,9 @@ theme.loadPlugins = function()
 		SneakScope = { bg = nord.nord1_gui },
 
 		-- Cmp
-		CmpItemKind = { fg = nord.nord15_gui },
+		-- CmpItemKind = { fg = nord.nord15_gui },
+    -- Change color of CmpItemKind -- Louis 2023-05-15 17:32
+		CmpItemKind = { fg = nord.nord13_gui },
 		CmpItemAbbrMatch = { fg = nord.nord5_gui, style = bold },
 		CmpItemAbbrMatchFuzzy = { fg = nord.nord5_gui, style = bold },
 		CmpItemAbbr = { fg = nord.nord4_gui },

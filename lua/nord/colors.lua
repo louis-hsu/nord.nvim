@@ -19,6 +19,8 @@ local dark_colors = {
 	nord14_gui = named_colors.green, -- nord14 in palette
 	nord15_gui = named_colors.purple, -- nord15 in palette
 	none = "NONE",
+  nord_gui_cursorline = named_colors.cursorline, -- new cursorline/column color -- Louis 2022/1124
+  nord_gui_comment = named_colors.comment, -- new comment color -- Louis 2022/1124
 }
 
 local light_colors = {
@@ -42,6 +44,8 @@ local light_colors = {
 	nord14_gui = named_colors.green, -- nord14 in palette
 	nord15_gui = named_colors.purple, -- nord15 in palette
 	none = "NONE",
+  nord_gui_cursorline = named_colors.cursorline, -- new cursorline/column color -- Louis 2022/1124
+  nord_gui_comment = named_colors.comment, -- new comment color -- Louis 2022/1124
 }
 
 local nord = (vim.o.background == "dark") and dark_colors or light_colors
@@ -56,7 +60,9 @@ else
 end
 
 if vim.g.nord_cursorline_transparent then
-	nord.cursorlinefg = nord.nord0_gui
+  -- Update to new cursorLine/column fg color -- Louis 2022/1124
+  -- nord.cursorlinefg = nord.nord0_gui
+  nord.cursorlinefg = nord.nord_gui_cursorline
 else
 	nord.cursorlinefg = nord.nord1_gui
 end

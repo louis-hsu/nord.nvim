@@ -18,5 +18,7 @@ local nord = {
 	green = "#A3BE8C", -- nord14 in palette
 	purple = "#B48EAD", -- nord15 in palette
 	none = "NONE",
+  cursorline = "#1b1f26", -- out of palette, for cursorline/column only -- Louis 2022/1124
+  comment = "#767676", -- out of palette, for comment only -- Louis 2022/1124
 }
 return nord
